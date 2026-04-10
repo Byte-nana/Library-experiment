@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin template</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss"></style>
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/a5f079a000.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-gray-200">
+    <div class="flex h-screen w-screen">
+      <nav
+        class="absolute lg:relative inset-y-0 left-0 -translate-x-full lg:translate-x-0 w-72 px-2 py-6 bg-gray-800 text-white transition-transform duration-200 ease-in-out"
+      >
+        <div class="flex items-center justify-between mb-8 px-4">
+          <h2 class="text-2xl font-semibold">Dashboard</h2>
+          <button
+            id="close-btn"
+            class="text-lg cursor-pointer lg:hidden hover:scale-120"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <ul class="flex flex-col space-y-2">
+          <li
+            class="px-4 py-3 bg-transparent rounded hover:bg-gray-400/20 transition-colors duration-250 ease-in-out"
+          >
+            <a href="">
+              <i class="fa-solid fa-house"></i>
+              <span class="ml-2">HOME</span>
+            </a>
+          </li>
+          <li
+            class="px-4 py-3 bg-transparent rounded cursor-pointer hover:bg-gray-400/20 transition-colors duration-250 ease-in-out"
+          >
+            <a href=""
+              ><i class="fa-regular fa-chart-bar"></i>
+              <span class="ml-2">ANALYTICS</span></a
+            >
+          </li>
+          <li
+            class="px-4 py-3 bg-transparent rounded cursor-pointer hover:bg-gray-400/20 transition-colors duration-250 ease-in-out"
+          >
+            <a href="">
+              <i class="fa-solid fa-list-check"></i>
+              <span class="ml-2">TASK MANAGEMENT</span>
+            </a>
+          </li>
+          <li
+            class="px-4 py-3 bg-transparent rounded cursor-pointer hover:bg-gray-400/20 transition-colors duration-250 ease-in-out"
+          >
+            <a href="">
+              <i class="fa-solid fa-gear"></i>
+              <span class="ml-2">SETTING</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="flex-1 w-full">
+        <header
+          class="flex justify-between items-center gap-x-8 px-8 py-2 border-b-4 border-indigo-600 bg-white text-gray-600"
+        >
+          <button
+            type="button"
+            id="menu-btn"
+            class="lg:hidden shrink-0 cursor-pointer text-xl hover:scale-110 transition"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <label
+            for="search"
+            class="w-4/5 flex items-center gap-4 p-2 text-lg focus-within:ring-2 focus-within:ring-blue-500 focus-within:rounded"
+          >
+            <button type="button" class="cursor-pointer">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search..."
+              class="outline-none"
+            />
+          </label>
+          <div class="flex items-center gap-x-6 shrink-0">
+            <button
+              class="text-lg cursor-pointer hover:rotate-12 hover:scale-110 transition"
+            >
+              <i class="fa-solid fa-bell"></i>
+            </button>
+            <button class="cursor-pointer">
+              <img
+                src="https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Sara"
+                alt="avatar"
+                class="w-8 border-2 border-transparent rounded-full hover:border-2 hover:border-gray-600 transition"
+              />
+            </button>
+          </div>
+        </header>
+        <main class="container w-full max-w-5xl mx-auto px-6 py-8">
+          <h2 class="mb-8 text-3xl">DASHBOARD</h2>
+          <section
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
+          >
+            <article
+              class="flex items-center space-x-6 px-4 py-6 bg-white rounded-lg overflow-hidden"
+            >
+              <div
+                class="w-12 h-12 flex justify-center items-center bg-indigo-400 text-white rounded-full"
+              >
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <div>
+                <p class="text-2xl font-semibold">8,282</p>
+                <p class="text-lg">New Users</p>
+              </div>
+            </article>
+            <article
+              class="flex items-center space-x-6 px-4 py-6 bg-white rounded-lg"
+            >
+              <div
+                class="w-12 h-12 flex justify-center items-center bg-green-600/70 text-white rounded-full"
+              >
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <div>
+                <p class="text-2xl font-semibold">200,521</p>
+                <p class="text-lg">Total Order</p>
+              </div>
+            </article>
+            <article
+              class="flex items-center space-x-6 px-4 py-6 bg-white rounded-lg"
+            >
+              <div
+                class="w-12 h-12 flex justify-center items-center bg-pink-400 text-white rounded-full"
+              >
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <div>
+                <p class="text-2xl font-semibold">215,542</p>
+                <p class="text-lg">Total Revenue</p>
+              </div>
+            </article>
+          </section>
+          <section class="overflow-x-auto">
+            <table
+              class="w-full bg-white rounded-lg text-left border-collapse shadow-lg"
+            >
+              <thead class="bg-gray-200/40 border-b border-gray-200">
+                <tr>
+                  <th scope="col" class="px-6 py-2 font-medium">Task</th>
+                  <th scope="col" class="p-2 font-medium">Assignee</th>
+                  <th scope="col" class="p-2 font-medium">Due Date</th>
+                  <th scope="col" class="p-2 font-medium">Progress</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-200">
+                  <td class="pl-6 p-2">Design new landing page</td>
+                  <td class="p-2">Cheolsu Kim</td>
+                  <td class="p-2">30th June 2026</td>
+                  <td class="p-2">
+                    <span class="px-2 bg-green-200 text-green-900 rounded-xl"
+                      >In progress</span
+                    >
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="pl-6 p-2">Update brand logo</td>
+                  <td class="p-2">Young-Hee Lee</td>
+                  <td class="p-2">10th July 2026</td>
+                  <td class="p-2">
+                    <span class="px-2 bg-yellow-100 text-yellow-900 rounded-xl"
+                      >Pending</span
+                    >
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="pl-6 p-2">Plan marketing campaign</td>
+                  <td class="p-2">SuSeong Park</td>
+                  <td class="p-2">15th July 2026</td>
+                  <td class="p-2">
+                    <span class="px-2 bg-blue-100 text-blue-900 rounded-xl"
+                      >In review</span
+                    >
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="pl-6 p-2">Improve Backend API</td>
+                  <td class="p-2">YuSeong Jeong</td>
+                  <td class="p-2">1st Augest 2026</td>
+                  <td class="p-2">
+                    <span class="px-2 bg-red-100 text-red-900 rounded-xl"
+                      >Delayed</span
+                    >
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="pl-6 p-2">Analyse user feedbacks</td>
+                  <td class="p-2">MinSu Choi</td>
+                  <td class="p-2">5th August 2026</td>
+                  <td class="p-2">
+                    <span class="px-2 bg-green-200 text-green-900 rounded-xl"
+                      >In progress</span
+                    >
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="pl-6 p-2">Website maintance</td>
+                  <td class="p-2">JiMin Han</td>
+                  <td class="p-2">20th August 2026</td>
+                  <td class="p-2">
+                    <span class="px-2 bg-blue-100 text-blue-900 rounded-xl">
+                      In review
+                    </span>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="pl-6 p-2">Write customer support manual</td>
+                  <td class="p-2">SeongSu Youn</td>
+                  <td class="p-2">25th August 2026</td>
+                  <td class="p-2">
+                    <span class="px-2 bg-yellow-100 text-yellow-900 rounded-xl"
+                      >Pending</span
+                    >
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="pl-6 p-2">Optmise SEO</td>
+                  <td class="p-2">JiSung Park</td>
+                  <td class="p-2">5th September 2026</td>
+                  <td class="p-2">
+                    <span class="px-2 bg-green-200 text-green-900 rounded-xl"
+                      >In progress</span
+                    >
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="pl-6 p-2">Test mobile app</td>
+                  <td class="p-2">HyeonJin Lee</td>
+                  <td class="p-2">10th September 2026</td>
+                  <td class="p-2">
+                    <span class="px-2 bg-red-100 text-red-900 rounded-xl"
+                      >Delayed</span
+                    >
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="pl-6 p-2">Develope new UI/UX</td>
+                  <td class="p-2">JeongMin Park</td>
+                  <td class="p-2">15th September 2026</td>
+                  <td class="p-2">
+                    <span class="px-2 bg-blue-100 text-blue-900 rounded-xl"
+                      >In review</span
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script>
+      const menuBtn = document.querySelector('#menu-btn');
+      const closeBtn = document.querySelector('#close-btn');
+      const menuBar = document.querySelector('nav');
+
+      menuBtn.addEventListener('click', () => {
+        menuBar.classList.toggle('-translate-x-full');
+      });
+
+      closeBtn.addEventListener('click', () => {
+        menuBar.classList.toggle('-translate-x-full');
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Mode Basic</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @custom-variant dark (&:where(.dark, .dark *));
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col items-center justify-center">
+    <div
+      class="bg-white dark:bg-slate-800 text-slate-900 dark:text-white p-6 rounded-lg shadow-md max-w-lg"
+    >
+      <h3 class="text-lg font-bold">Writes Upside-Down</h3>
+      <p class="text-slate-600 dark:text-slate-400">
+        The Zero Gravity Pen can be used to write in any orientation, including
+        upside-down. It even works in outer space.
+      </p>
+    </div>
+  </body>
+</html>

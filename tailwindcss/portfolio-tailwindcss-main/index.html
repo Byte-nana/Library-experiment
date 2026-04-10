@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>개발자 포트폴리오</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'selector',
+      };
+    </script>
+    <style>
+      [id] {
+        scroll-margin-top: 64px; /* 원하는 여백 값으로 설정 */
+      }
+    </style>
+  </head>
+  <body
+    class="dark:bg-gray-900 dark:text-white bg-white text-black min-h-screen transition-colors duration-300"
+  >
+    <header class="sticky top-0 bg-opacity-90 backdrop-blur-lg">
+      <nav
+        class="container max-w-4xl mx-auto px-6 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-4">
+          <h1 class="text-2xl font-bold">김개발</h1>
+          <p class="text-sm text-gray-500 dark:text-gray-300">풀스택 개발자</p>
+        </div>
+
+        <div class="hidden md:flex items-center gap-x-6">
+          <a href="#home" class="hover:text-blue-500 transition-colors">홈</a>
+          <a href="#about" class="hover:text-blue-500 transition-colors"
+            >소개</a
+          >
+          <a href="#skills" class="hover:text-blue-500 transition-colors"
+            >기술</a
+          >
+          <a href="#projects" class="hover:text-blue-500 transition-colors"
+            >프로젝트</a
+          >
+          <a href="#contact" class="hover:text-blue-500 transition-colors"
+            >연락처</a
+          >
+          <button
+            id="darkModeToggle"
+            class="p-2 w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring focus:ring-blue-500"
+          >
+            <i class="fas fa-moon text-gray-700 dark:text-yellow-400"></i>
+          </button>
+        </div>
+        <button
+          id="menuToggle"
+          class="md:hidden p-2 text-gray-700 dark:text-white"
+        >
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </nav>
+    </header>
+
+    <aside
+      id="mobileMenu"
+      class="block md:hidden fixed right-0 inset-y-0 w-64 bg-white dark:bg-gray-800 shadow-lg translate-x-full transition-transform duration-300 z-20"
+    >
+      <button id="closeMenu" class="p-2 m-4 text-gray-700 dark:text-white">
+        <i class="fas fa-times text-2xl"></i>
+      </button>
+      <nav class="flex flex-col space-y-4 mt-10 px-6">
+        <a href="#home" class="hover:text-blue-500 transition-colors">홈</a>
+        <a href="#about" class="hover:text-blue-500 transition-colors">소개</a>
+        <a href="#skills" class="hover:text-blue-500 transition-colors">기술</a>
+        <a href="#projects" class="hover:text-blue-500 transition-colors"
+          >프로젝트</a
+        >
+        <a href="#contact" class="hover:text-blue-500 transition-colors"
+          >연락처</a
+        >
+        <button
+          id="darkModeToggleMobile"
+          class="p-2 w-full rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring focus:ring-blue-500"
+        >
+          <i class="fas fa-moon text-gray-700 dark:text-yellow-400"></i>
+        </button>
+      </nav>
+    </aside>
+
+    <main class="container max-w-4xl mx-auto px-6 py-12">
+      <!-- Home Section -->
+      <section
+        id="home"
+        class="flex flex-col md:flex-row justify-between items-center mb-12"
+      >
+        <div class="shrink-0 mb-6 md:mb-0 md:mr-10">
+          <img
+            class="w-56 h-56 rounded-full border-2 object-cover"
+            src="https://api.dicebear.com/9.x/adventurer/svg?seed=Oliver"
+            alt="avatar"
+          />
+        </div>
+        <div class="text-center md:text-right">
+          <h1 class="text-4xl font-bold mb-2">김개발</h1>
+          <p class="text-xl mb-4">혁신적인 개발자</p>
+          <p class="text-gray-600 dark:text-gray-400">
+            5년 이상의 경력을 가진 열정적인 풀스택 개발자입니다. 확장 가능한 웹
+            애플리케이션 구축에 전문성을 갖추고 있으며, 최신 JavaScript
+            프레임워크와 클라우드 기술에 대한 전문 지식을 보유하고 있습니다.
+            항상 새로운 도전과 학습을 즐깁니다.
+          </p>
+        </div>
+      </section>
+      <!-- About Section -->
+      <section id="about" class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">소개</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <article
+            class="bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-6 hover:scale-105 transition-transform duration-300"
+          >
+            <h3 class="text-xl font-semibold mb-4">👨‍🎓 교육 및 활동</h3>
+            <ul class="text-gray-800 dark:text-gray-300 leading-relaxed">
+              <li>👉 2023 프론트엔드 개발자 인턴십 (ABC Tech)</li>
+              <li>👉 2022 웹 개발 부트캠프 수료 (XYZ Coding School)</li>
+              <li>👉 2021 오픈소스 프로젝트 참여 (오픈소스 커뮤니티)</li>
+              <li>👉 2020 대학 동아리 웹 개발 팀장 활동</li>
+            </ul>
+          </article>
+          <article
+            class="bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-6 hover:scale-105 transition-transform duration-300"
+          >
+            <h3 class="text-xl font-semibold mb-4">🧑‍💻 자격증</h3>
+            <ul class="text-gray-800 dark:text-gray-300 leading-relaxed">
+              <li>👉 2023 정보처리기사</li>
+              <li>👉 2022 AWS Certified Solutions Architect</li>
+              <li>👉 2021 자바 프로그래밍 1급</li>
+              <li>👉 2020 웹디자인 기능사</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section id="skills" class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">기술</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div
+            class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+          >
+            <i class="fa-brands fa-html5 text-4xl text-red-500 mb-1"></i>
+            <h3 class="text-lg font-semibold">HTML5</h3>
+          </div>
+          <div
+            class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+          >
+            <i class="fa-brands fa-css3-alt text-4xl text-blue-500 mb-1"></i>
+            <h3 class="text-lg font-semibold">CSS3</h3>
+          </div>
+          <div
+            class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+          >
+            <i class="fa-brands fa-js text-4xl text-yellow-400 mb-1"></i>
+            <h3 class="text-lg font-semibold">JavaScript</h3>
+          </div>
+          <div
+            class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+          >
+            <i class="fa-brands fa-react text-4xl text-blue-400 mb-1"></i>
+            <h3 class="text-lg font-semibold">React</h3>
+          </div>
+          <div
+            class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+          >
+            <i class="fa-brands fa-vuejs text-4xl text-green-400 mb-1"></i>
+            <h3 class="text-lg font-semibold">Vue.js</h3>
+          </div>
+          <div
+            class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+          >
+            <i class="fa-brands fa-node text-4xl text-green-500 mb-1"></i>
+            <h3 class="text-lg font-semibold">Node.js</h3>
+          </div>
+        </div>
+      </section>
+      <section id="projects" class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">프로젝트</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <article
+            class="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
+          >
+            <img
+              class="w-full h-48 object-cover"
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600"
+              alt="전자상거래 플랫폼 이미지"
+            />
+            <div class="p-6">
+              <h3
+                class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100"
+              >
+                전자상거래 플랫폼
+              </h3>
+              <div class="space-x-2 mb-4">
+                <span
+                  class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600"
+                >
+                  React
+                </span>
+                <span
+                  class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600"
+                >
+                  Node.js
+                </span>
+                <span
+                  class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600"
+                >
+                  Express
+                </span>
+                <span
+                  class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600"
+                >
+                  MongoDB
+                </span>
+              </div>
+              <div class="flex justify-start space-x-2">
+                <a
+                  href="#"
+                  class="text-sm bg-gray-800 dark:bg-gray-300 text-white dark:text-gray-800 px-3 py-1 rounded-md"
+                  >GitHub</a
+                >
+                <a
+                  href="#"
+                  class="text-sm bg-blue-600 text-white px-3 py-1 rounded-md"
+                  >라이브 데모</a
+                >
+              </div>
+            </div>
+          </article>
+          <article
+            class="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
+          >
+            <img
+              class="w-full h-48 object-cover"
+              src="https://images.unsplash.com/photo-1522199670076-2852f80289c3?q=80&w=600"
+              alt="작업 관리 앱 이미지"
+            />
+            <div class="p-6">
+              <h3
+                class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100"
+              >
+                작업 관리 앱
+              </h3>
+              <div class="space-x-2 mb-4">
+                <span
+                  class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600"
+                  >React</span
+                >
+                <span
+                  class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600"
+                  >Redux</span
+                >
+                <span
+                  class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600"
+                  >Drag and Drop</span
+                >
+                <span
+                  class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600"
+                  >Firebase</span
+                >
+              </div>
+              <div class="flex justify-start space-x-2">
+                <a
+                  href="#"
+                  class="text-sm bg-gray-800 dark:bg-gray-300 text-white dark:text-gray-800 px-3 py-1 rounded-md"
+                  >GitHub</a
+                >
+                <a
+                  href="#"
+                  class="text-sm bg-blue-600 text-white px-3 py-1 rounded-md"
+                  >라이브 데모</a
+                >
+              </div>
+            </div>
+          </article>
+          <article
+            class="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
+          >
+            <img
+              class="w-full h-48 object-cover"
+              src="https://images.unsplash.com/photo-1483058712412-4245e9b90334?q=80&w=600"
+              alt="포트폴리오 웹사이트 이미지"
+            />
+            <div class="p-6">
+              <h3
+                class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100"
+              >
+                포트폴리오 웹사이트
+              </h3>
+              <div class="space-x-2 mb-4">
+                <span
+                  class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600"
+                  >HTML</span
+                >
+                <span
+                  class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600"
+                  >CSS</span
+                >
+                <span
+                  class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600"
+                  >JavaScript</span
+                >
+              </div>
+              <div class="flex justify-start space-x-2">
+                <a
+                  href="#"
+                  class="text-sm bg-gray-800 dark:bg-gray-300 text-white dark:text-gray-800 px-3 py-1 rounded-md"
+                  >GitHub</a
+                >
+                <a
+                  href="#"
+                  class="text-sm bg-blue-600 text-white px-3 py-1 rounded-md"
+                  >라이브 데모</a
+                >
+              </div>
+            </div>
+          </article>
+          <article
+            class="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
+          >
+            <img
+              class="w-full h-48 object-cover"
+              src="https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?q=80&w=600"
+              alt="블로그 플랫폼 이미지"
+            />
+            <div class="p-6">
+              <h3
+                class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100"
+              >
+                블로그 플랫폼
+              </h3>
+              <div class="space-x-2 mb-4">
+                <span
+                  class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600"
+                  >Next.js</span
+                >
+                <span
+                  class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600"
+                  >Tailwind CSS</span
+                >
+                <span
+                  class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600"
+                  >Markdown</span
+                >
+              </div>
+              <div class="flex justify-start space-x-2">
+                <a
+                  href="#"
+                  class="text-sm bg-gray-800 dark:bg-gray-300 text-white dark:text-gray-800 px-3 py-1 rounded-md"
+                  >GitHub</a
+                >
+                <a
+                  href="#"
+                  class="text-sm bg-blue-600 text-white px-3 py-1 rounded-md"
+                  >라이브 데모</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="contact" class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">연락처</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <form id="contactForm" class="space-y-4">
+            <div>
+              <label for="name" class="block mb-1 font-medium">이름</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="dark:bg-gray-700 dark:border-gray-600 dark:text-white w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label for="email" class="block mb-1 font-medium">이메일</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="dark:bg-gray-700 dark:border-gray-600 dark:text-white w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label for="name" class="block mb-1 font-medium">메시지</label>
+              <textarea
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="dark:bg-gray-700 dark:border-gray-600 dark:text-white w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-500"
+              >
+              </textarea>
+            </div>
+            <button
+              type="submit"
+              class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-500 transition-colors"
+            >
+              이메일 보내기
+            </button>
+          </form>
+          <div class="flex flex-col items-center justify-center gap-y-4">
+            <a
+              href="#"
+              target="_blank"
+              class="dark:text-gray-300 flex items-center space-x-2 text-gray-600 hover:text-blue-500 transition-colors"
+            >
+              <i class="fa-brands fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              class="dark:text-gray-300 flex items-center space-x-2 text-gray-600 hover:text-blue-500 transition-colors"
+            >
+              <i class="fa-brands fa-youtube"></i>
+              <span>Youtube</span>
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              class="dark:text-gray-300 flex items-center space-x-2 text-gray-600 hover:text-blue-500 transition-colors"
+            >
+              <i class="fa-brands fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              class="dark:text-gray-300 flex items-center space-x-2 text-gray-600 hover:text-blue-500 transition-colors"
+            >
+              <i class="fa-regular fa-envelope"></i>
+              <span>bruce.lean17@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-gray-100 dark:bg-gray-800 py-6">
+      <div class="container max-w-4xl mx-auto px-6 text-center">
+        <p>&copy; 2024 김개발. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      function initialTheme() {
+        const darkModeToggleIcon = document
+          .getElementById('darkModeToggle')
+          .querySelector('i');
+        if (!localStorage.theme || localStorage.theme === 'dark') {
+          document.documentElement.classList.add('dark');
+          localStorage.theme = 'dark'; // 기본값을 dark로 설정
+          darkModeToggleIcon.className = 'fas fa-sun text-yellow-400';
+        } else {
+          document.documentElement.classList.remove('dark');
+          darkModeToggleIcon.className = 'fas fa-moon text-gray-700';
+        }
+      }
+      function toggleDarkMode() {
+        const darkModeToggleIcon = document
+          .getElementById('darkModeToggle')
+          .querySelector('i');
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.theme = 'light';
+          darkModeToggleIcon.className = 'fas fa-moon text-gray-700';
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.theme = 'dark';
+          darkModeToggleIcon.className = 'fas fa-sun text-yellow-400';
+        }
+      }
+      document
+        .getElementById('darkModeToggle')
+        .addEventListener('click', toggleDarkMode);
+
+      const mobileMenu = document.getElementById('mobileMenu');
+      // 모바일 메뉴 열기
+      document.getElementById('menuToggle').addEventListener('click', () => {
+        mobileMenu.classList.toggle('translate-x-full');
+      });
+      document.getElementById('closeMenu').addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full');
+      });
+
+      initialTheme();
+    </script>
+  </body>
+</html>
